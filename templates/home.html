@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW"> <!-- 將 lang 改為 zh-TW -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXEL.ART</title> <!-- 修改標題 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      body{
+        margin: 0;
+        font-family: monospace;
+        background-color: #fff;
+        color: black;
+      }
+    </style>
+</head>
+<body>
+    <!--導航選單-->
+    <div class="overlay"></div>
+    <nav class="sidebar-menu">
+      <div class="sidebar-header">
+        <i class="fas fa-times close-btn"></i>
+      </div>
+      <ul class="menu-list">
+        <li><a href="{{ url_for('home') }}">首頁</a></li>
+        <li><a href="{{ url_for('portfolio') }}">作品集</a></li>
+        <li><a href="{{ url_for('pixelart') }}">像素畫</a></li>
+        <li><a href="{{ url_for('gameinfo') }}">遊戲資訊</a></li>
+      </ul>
+    </nav>
+    <!--首頁-->
+    <header class="main-header">
+      <div class="header-left">
+        <i class="fas fa-bars menu-icon" id="open"></i> 
+        <a href="{{ url_for('home') }}" class="logo">PIXEL.ART</a>
+      </div>
+
+      <div class="header-center">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="search">
+        </div>
+      </div>
+
+      <div  class="header-right">
+        <a href="{{ url_for('about') }}" class="nav-link">ABOUT.ME</a>
+      
+      </div>
+    </header>
+    <div class="divider-line"></div>
+    
+
+
+    <main class="content-area home-content">
+      <div class="welcome">
+        <p>welcome</p>
+        <p>my website</p>
+      </div>
+      
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

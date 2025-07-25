@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW"> <!-- 將 lang 改為 zh-TW -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT ME</title> <!-- 修改標題 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="sidebar-menu">
+      <div class="sidebar-header">
+        <i class="fas fa-times close-btn"></i>
+      </div>
+      <ul class="menu-list">
+        <li><a href="{{ url_for('home') }}">首頁</a></li>
+        <li><a href="{{ url_for('portfolio') }}">作品集</a></li>
+        <li><a href="{{ url_for('pixelart') }}">像素畫</a></li>
+        <li><a href="{{ url_for('gameinfo') }}">遊戲資訊</a></li>
+        
+      </ul>
+    </nav>
+    <header class="main-header">
+      <div class="header-left">
+        <i class="fas fa-bars menu-icon" id="open"></i>  
+        <a href="{{ url_for('home') }}" class="logo">PIXEL.ART</a>
+      </div>
+
+      <div class="header-center">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="search">
+        </div>
+      </div>
+
+      <div  class="header-right">
+        <a href="{{ url_for('about') }}" class="nav-link">ABOUT.ME</a>
+        
+      </div>
+    </header>
+    <div class="divider-line"></div>
+
+    <main class="content-area about-content">
+      <div class="about-container">
+        <div class="profile-section">
+            <div class="profile-pic">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="我的大頭貼">
+            </div>
+            <div class="about-me-text">ABOUT ME</div>
+            <div class="social-icon">
+                <a href="https://github.com/iopzhj" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UCv2Ato91vqxdh6T4zLIBwAg" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="description-section">
+            <p>你好，我是肉體治療師，這是我的網站</p>
+            <p>熱愛遊戲、像素畫的一位人類</p>
+        </div>
+      </div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

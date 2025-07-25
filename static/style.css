@@ -1,0 +1,496 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: monospace;
+    background-color: #fff;
+    color: black;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 3px solid #a6a6a6;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    color: #000;
+}
+
+.menu-icon {
+    font-size: 36px; /* <-- 在這裡調整大小，例如從 30px 改成 36px 或您想要的大小 */
+    color: #000;    /* 圖示顏色，也可以在這裡修改 */
+    cursor: pointer;
+    padding-top: 5px; /* 微調位置 */
+}
+
+.header-center{
+    flex-grow: 1;
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding: 8px 15px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #a6a6a6;
+}
+
+
+
+.search-bar input[type="text"]{
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 24px;
+    color: #000;
+    font-family: monospace;
+}
+
+.search-bar input[type="text"]::placeholder{
+    color: #000;
+    font-family: monospace;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+    gap: 30px;   
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #000;
+    font-size: 48px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover{
+    color: #a6a6a6;
+}
+
+.divider-line{
+    width: 100%;
+    height: 2px;
+    background-color: #a6a6a6;
+    margin-top: -1px;
+    flex-shrink: 00;
+}
+
+.content-area{
+    flex-grow: 1; /* 佔據剩餘高度 */
+    padding: 40px; /* 通用的頁面內邊距，您可以根據需要調整 */
+    box-sizing: border-box;
+}
+
+.home-content {
+    display: flex;
+    justify-content: center; /* 水平居中其內容 */
+    align-items: center;     /* 垂直居中其內容 */
+}
+
+/* 保持 .welcome 的內部文字居中 */
+.welcome {
+    /* 這些是 .welcome 自己的樣式，與父容器居中無關 */
+    margin: 0;
+    font-size: 96px;
+    line-height: 0.5; /* 您這個行高非常小，會讓文字重疊，建議調整 */
+    text-transform: lowercase;
+    font-family: monospace;
+    text-align: center; /* 確保 welcome 內部文字居中 */
+}
+
+.about-content {
+    display: flex;
+    justify-content: center; /* 水平居中 about-container */
+    align-items: center;     /* 垂直居中 about-container */
+}
+
+/* 保持 .about-container 內部的對齊方式不變 */
+.about-container {
+    /* ... 之前的樣式，這些是 .about-container 自己的佈局，不受 content-area 的居中影響 */
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 120px;
+    box-sizing: border-box;
+}
+
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.profile-pic{
+    width: 180px;
+    height: 180px;
+    background-color: #a6a6a6;
+    border-radius: 50%;
+    border: 3px solid #000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-pic img {
+    width: 100%; /* 圖片寬度填滿父容器 */
+    height: 100%; /* 圖片高度填滿父容器 */
+    object-fit: cover; /* <-- **關鍵**：保持圖片比例，並裁剪多餘部分以覆蓋整個容器 */
+    border-radius: 50%; /* <-- **重要**：讓圖片自身也變成圓形，確保完美剪裁 */
+}
+
+.about-me-text {
+    font-size: 28px; /* 字體大小 */
+    font-weight: bold;
+    margin-bottom: 20px; /* 與下方社群圖示的間距 */
+    white-space: nowrap; /* 防止換行 */
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px; /* 圖示之間的間距 */
+}
+
+.social-icon {
+    font-size: 38px; /* 圖示大小 */
+    color: #000; /* 圖示顏色 */
+    text-decoration: none; /* 移除連結下劃線 */
+    transition: color 0.3s ease; /* 鼠標懸停效果 */
+}
+
+.social-icon:hover {
+    color: #555; /* 鼠標懸停時顏色變淺 */
+}
+
+/* 文字敘述區塊 (右側) */
+.description-section {
+    flex-grow: 1; /* 佔據所有剩餘空間 */
+    background-color: #fff; /* 灰色背景 */
+    min-height: 300px; /* 最小高度，確保方形可見 */
+    padding: 10px; /* 內邊距 */
+    box-sizing: border-box; /* 確保 padding 不影響寬度 */
+    display: flex; /* 讓內容居中 */
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 32px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.description-section p {
+    margin: 0; /* 移除段落預設邊距 */
+    text-align: start;
+    font-family: monospace; /* 使用等寬字體 */
+}
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease,visiblity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1; /* 顯示時完全不透明 */
+    visibility: visible; /* 顯示 */
+}
+
+/* 側邊菜單本身 */
+.sidebar-menu {
+    position: fixed; /* 固定在視口中 */
+    top: 0;
+    left: 0; /* 初始時從左邊緣顯示 */
+    width: 300px; /* 菜單的寬度 */
+    height: 100%;
+    background-color: #f8f8f8; /* 菜單背景色 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* 輕微的陰影效果 */
+    z-index: 100; /* 確保菜單在最上層 */
+    transform: translateX(-100%); /* 初始隱藏，完全移到左側視口外 */
+    transition: transform 0.3s ease-out; /* 滑入滑出動畫 */
+    box-sizing: border-box; /* 確保 padding 不會增加寬度 */
+    padding: 20px; /* 內部邊距 */
+    border-right: 1px solid #e0e0e0; /* 右側邊框，像圖片所示 */
+}
+
+/* 菜單打開時的樣式 */
+.sidebar-menu.active {
+    transform: translateX(0); /* 菜單滑入，回到原始位置 */
+}
+
+/* 側邊菜單頭部 */
+.sidebar-header {
+    display: flex;
+    justify-content: flex-end; /* 將關閉按鈕推到右邊 */
+    padding: 10px 0;
+    margin-bottom: 20px; /* 與菜單列表的間距 */
+}
+
+/* 關閉按鈕樣式 (X 圖標) */
+.close-btn {
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+/* 菜單列表 */
+.menu-list {
+    list-style: none; /* 移除列表項目符號 */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    border-bottom: 1px solid #e0e0e0; /* 每個選項底部的分隔線 */
+}
+
+.menu-list li:last-child {
+    border-bottom: none; /* 最後一個項目沒有底線 */
+}
+
+.menu-list a {
+    display: block; /* 讓連結佔滿整個列表項，方便點擊 */
+    padding: 15px 10px; /* 連結內邊距 */
+    text-decoration: none; /* 移除下劃線 */
+    color: #000;
+    font-size: 20px; /* 字體大小 */
+    font-weight: bold;
+    font-family: monospace; /* 保持像素字體 */
+    transition: background-color 0.3s ease; /* 鼠標懸停效果 */
+}
+
+.menu-list a:hover {
+    background-color: #e0e0e0; /* 鼠標懸停時背景色變淺 */
+}
+
+.portfolio-content {
+    display: flex;
+    justify-content: center; /* 水平居中 portfolio-grid */
+    align-items: flex-start; /* 靠頂部對齊 portfolio-grid */
+}
+
+/* 保持 .portfolio-grid 內部的樣式不變 */
+.portfolio-grid {
+    /* ... 之前的樣式 ... */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column; /* 圖片和文字垂直堆疊 */
+    align-items: center; /* 讓圖片和文字在單個項目內水平居中 */
+    text-align: center; /* 確保文字居中 */
+    /* 可選：給每個作品項目一個邊框或背景 */
+    /* border: 1px solid #ddd; */
+    /* padding: 15px; */
+    /* background-color: #fefefe; */
+}
+
+.portfolio-img-box {
+    width: 300px; /* 圖片框的寬度 */
+    height: 300px; /* 圖片框的高度，讓它成為正方形 */
+    background-color: #cccccc; /* 圖片佔位符的背景色 (灰色) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 裁剪超出框的圖片內容 */
+    margin-bottom: 15px; /* 圖片框和下方文字框之間的間距 */
+}
+
+.portfolio-img-box img {
+    width: 100%; /* 圖片寬度填滿其父容器 */
+    height: 100%; /* 圖片高度填滿其父容器 */
+    object-fit: cover; /* **關鍵**：保持圖片比例，裁剪多餘部分以覆蓋整個框，防止圖片變形 */
+}
+
+.portfolio-text-box {
+    width: 300px; /* 文字框的寬度，與圖片框保持一致 */
+    min-height: 80px; /* 文字框的最小高度 */
+    background-color: #cccccc; /* 文字框的背景色 (灰色) */
+    display: flex;
+    justify-content: center; /* 讓文字在框內水平居中 */
+    align-items: center; /* 讓文字在框內垂直居中 */
+    padding: 10px; /* 文字框內邊距 */
+    box-sizing: border-box; /* 確保 padding 不會增加寬度 */
+    font-size: 18px;
+    color: #000;
+    font-family: monospace; /* 保持字體風格一致 */
+}
+
+.portfolio-text-box p {
+    margin: 0; /* 移除段落預設邊距 */
+}
+
+.pixelart-content {
+    display: flex;
+    justify-content: center; /* 水平居中 portfolio-grid */
+    align-items: flex-start; /* 靠頂部對齊 portfolio-grid */
+}
+
+/* 保持 .portfolio-grid 內部的樣式不變 */
+.pixelart-grid {
+    /* ... 之前的樣式 ... */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.pixelart-item {
+    display: flex;
+    flex-direction: column; /* 圖片和文字垂直堆疊 */
+    align-items: center; /* 讓圖片和文字在單個項目內水平居中 */
+    text-align: center; /* 確保文字居中 */
+    /* 可選：給每個作品項目一個邊框或背景 */
+    /* border: 1px solid #ddd; */
+    /* padding: 15px; */
+    /* background-color: #fefefe; */
+}
+
+.pixelart-img-box {
+    width: 300px; /* 圖片框的寬度 */
+    height: 300px; /* 圖片框的高度，讓它成為正方形 */
+    background-color: #cccccc; /* 圖片佔位符的背景色 (灰色) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 裁剪超出框的圖片內容 */
+    margin-bottom: 15px; /* 圖片框和下方文字框之間的間距 */
+}
+
+.pixelart-img-box img {
+    width: 100%; /* 圖片寬度填滿其父容器 */
+    height: 100%; /* 圖片高度填滿其父容器 */
+    object-fit: cover; /* **關鍵**：保持圖片比例，裁剪多餘部分以覆蓋整個框，防止圖片變形 */
+}
+
+.pixelart-text-box {
+    width: 300px; /* 文字框的寬度，與圖片框保持一致 */
+    min-height: 80px; /* 文字框的最小高度 */
+    background-color: #cccccc; /* 文字框的背景色 (灰色) */
+    display: flex;
+    justify-content: center; /* 讓文字在框內水平居中 */
+    align-items: center; /* 讓文字在框內垂直居中 */
+    padding: 10px; /* 文字框內邊距 */
+    box-sizing: border-box; /* 確保 padding 不會增加寬度 */
+    font-size: 18px;
+    color: #000;
+    font-family: monospace; /* 保持字體風格一致 */
+}
+
+.pixelart-text-box p {
+    margin: 0; /* 移除段落預設邊距 */
+}
+
+.gameinfo-content {
+    display: flex;
+    justify-content: center; /* 水平居中 portfolio-grid */
+    align-items: flex-start; /* 靠頂部對齊 portfolio-grid */
+}
+
+/* 保持 .portfolio-grid 內部的樣式不變 */
+.gameinfo-grid {
+    /* ... 之前的樣式 ... */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.gameinfo-item {
+    display: flex;
+    flex-direction: column; /* 圖片和文字垂直堆疊 */
+    align-items: center; /* 讓圖片和文字在單個項目內水平居中 */
+    text-align: center; /* 確保文字居中 */
+    /* 可選：給每個作品項目一個邊框或背景 */
+    /* border: 1px solid #ddd; */
+    /* padding: 15px; */
+    /* background-color: #fefefe; */
+}
+
+.gameinfo-img-box {
+    width: 300px; /* 圖片框的寬度 */
+    height: 300px; /* 圖片框的高度，讓它成為正方形 */
+    background-color: #cccccc; /* 圖片佔位符的背景色 (灰色) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 裁剪超出框的圖片內容 */
+    margin-bottom: 15px; /* 圖片框和下方文字框之間的間距 */
+}
+
+.gameinfo-img-box img {
+    width: 100%; /* 圖片寬度填滿其父容器 */
+    height: 100%; /* 圖片高度填滿其父容器 */
+    object-fit: cover; /* **關鍵**：保持圖片比例，裁剪多餘部分以覆蓋整個框，防止圖片變形 */
+}
+
+.gameinfo-text-box {
+    width: 300px; /* 文字框的寬度，與圖片框保持一致 */
+    min-height: 80px; /* 文字框的最小高度 */
+    background-color: #cccccc; /* 文字框的背景色 (灰色) */
+    display: flex;
+    justify-content: center; /* 讓文字在框內水平居中 */
+    align-items: center; /* 讓文字在框內垂直居中 */
+    padding: 10px; /* 文字框內邊距 */
+    box-sizing: border-box; /* 確保 padding 不會增加寬度 */
+    font-size: 18px;
+    color: #000;
+    font-family: monospace; /* 保持字體風格一致 */
+}
+
+.gameinfo-text-box p {
+    margin: 0; /* 移除段落預設邊距 */
+}
